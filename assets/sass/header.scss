@@ -1,0 +1,276 @@
+#header {
+  min-width: 320px;
+  width: 100%;
+  background-color: var(--gray-5);
+  position: relative;
+  z-index: 3;
+  height: 60px;
+
+  .italy {
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    background-color: var(--white);
+    border: none;
+    border-top: var(--green) 6px solid;
+    border-bottom: var(--red) 6px solid;
+    height: 18px;
+    margin: 0;
+  }
+
+  .logo {
+    position: absolute;
+    transition: all 1s ease-in-out;
+    top: 15px;
+    width: 72px;
+    right: calc(50vw - 36px);
+    z-index: 5;
+  }
+
+  .menu {
+    transition: right .5s ease-in-out;
+    width: 300px;
+    height: 100vh;
+    padding-bottom: 50px;
+    background-color: var(--gray-7);
+    position: fixed;
+    right: -300px;
+    top: 0;
+    z-index: 4;
+    flex-direction: column;
+    justify-content: space-between;
+
+    hr {
+      width: 100%;
+      border-bottom: none;
+      border-color: var(--black-10);
+      margin: 0;
+    }
+
+    &.logged {
+      nav {
+        ul {
+          li {
+            &.divider {
+              display: flex;
+            }
+            &.hide-guest {
+              display: flex;
+            }
+          }
+        }
+      }
+      .footer {
+        > div {
+          display: flex;
+        }
+        > .btn-register {
+          display: none;
+        }
+      }
+    }
+
+    nav {
+      flex-direction: column;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        margin-top: 249px;
+        width: 100%;
+        flex-direction: column;
+
+        li {
+          padding: 14px 0;
+          list-style: none;
+          justify-content: center;
+
+          a {
+            text-decoration: none;
+            color: var(--gray-0);
+          }
+
+          &.hide-guest, &.divider {
+            display: none;
+          }
+
+          hr {
+            margin: 15px 0;
+          }
+        }
+      }
+    }
+    .footer {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      > div {
+        display: none;
+        padding: 15px;
+        width: 100%;
+        align-items: center;
+
+        picture {
+          margin-right: 10px;
+
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+          }
+        }
+
+        > div {
+          flex-direction: column;
+          flex: 1;
+        }
+
+        a {
+          color: var(--dark-0);
+          text-decoration: none;
+          font-size: 16px;
+
+          small {
+            color: var(--gray-2);
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .btn-register {
+      margin: 20px;
+      width: calc(300px - 40px);
+      @include button-green;
+    }
+  }  
+
+  button {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 13px;
+  }
+
+  #btn-open, #btn-close {
+    position: absolute;
+    right: 0;
+  }
+}
+
+.open-menu {
+  overflow: hidden;
+
+  #header {
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--dark-1);
+      z-index: 4;
+    }
+
+    .menu {
+      right: 0;
+    }
+    .logo {
+      right: 87px;
+      width: 120px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .open-menu {
+    overflow: initial;
+
+    #header {
+      .overlay {
+        display: none;
+      }
+
+      .logo {
+        width: 100px;
+        top: 17px;
+        right: calc(100vw - 150px);
+      }
+    }
+  }
+  
+  #header {
+    height: 100px;
+
+    .italy {
+      top: 100px;
+    }
+
+    .logo {
+      width: 100px;
+      top: 17px;
+      right: calc(100vw - 150px);
+    }
+
+    #btn-open, #btn-close {
+      display: none;
+    }
+
+    .menu {
+      right: initial;
+      position: static;
+      background-color: initial;
+      width: 100%;
+      height: 100px;
+      flex-direction: row;
+      margin-left: 150px;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+
+      .btn-register {
+        margin: 0;
+        margin-right: 30px;
+        width: 200px;
+      }
+
+      nav {
+        width: 100%;
+
+        ul {
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          margin-top: 0;
+
+          li {
+            a {
+              font-size: 18px;
+              min-width: 120px;
+              padding: 10px 0;
+              text-align: center;
+
+              &:hover {
+                color: var(--black);
+              }
+            }
+          }
+        }
+      }
+
+      .footer {
+        width: initial;
+        justify-content: center;
+
+        hr {
+          display: none;
+        }
+
+        > div {
+          height: 100px;
+        }
+      }
+    }
+  }
+}

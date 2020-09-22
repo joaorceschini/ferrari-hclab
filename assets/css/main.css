@@ -1,0 +1,361 @@
+@font-face {
+  font-family: "Open Sans";
+  src: local("Open Sans Regular"), url("../fonts/OpenSans-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: local("Open Sans Light"), url("../fonts/OpenSans-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: local("Open Sans SemiBold"), url("../fonts/OpenSans-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: local("Open Sans Bold"), url("../fonts/OpenSans-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Nothing";
+  src: local("Nothing You Could Do"), url("../fonts/NothingYouCouldDo-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Teko";
+  src: local("Teko"), url("../fonts/Teko-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+:root {
+  --bg-color: #FFF;
+  --white: #FFF;
+  --black: #000;
+  --black-hover: #111;
+  --black-active: #222;
+  --black-10: #0000001a;
+  --black-50: rgba(0, 0, 0, .5);
+  --black-75: #000000bf;
+  --dark-0: #333;
+  --dark-1: #000000BF;
+  --gray: #79756C;
+  --gray-0: #707070;
+  --gray-1: #7E7E7E;
+  --gray-2: #9A9A99;
+  --gray-3: #CCC;
+  --gray-4: #00000029;
+  --gray-5: #E5E3DFBF;
+  --gray-6: #F8F8F8;
+  --gray-7: #E5E3DF;
+  --gray-8: #DDD;
+  --gray-9: #999;
+  --gray-10: #EEE;
+  --gray-11: #444;
+  --gray-12: #E8E8E8;
+  --red: #E32119;
+  --red-hover: #E44238;
+  --red-active: #C91D16;
+  --green: #00994D;
+  --green-hover: #00BE60;
+  --green-active: #00773C;
+  --blue: #199BD4;
+  --blue-hover: #1CABE9;
+  --blue-active: #00A0E6;
+  --success: #D4EDDA;
+  --success-border: #c3E6CB;
+  --success-color: #155724;
+  --danger: #F8D7DA;
+  --danger-border: #F5C6CB;
+  --danger-color: #721C24;
+  --space: 20px;
+  --border-radius: 5px;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+}
+
+body, div, article, aside, footer, header, main, nav, section, ul, ol, li, button, figure, picture {
+  display: flex;
+}
+
+body {
+  margin: 0;
+  flex-direction: column;
+  background-color: var(--bg-color);
+}
+
+hr.divider {
+  background-color: var(--gray-3);
+  height: 1px;
+  width: calc(100% - 2em);
+  margin: 3em 0;
+  border: none;
+  align-self: center;
+}
+
+#header {
+  min-width: 320px;
+  width: 100%;
+  background-color: var(--gray-5);
+  position: relative;
+  z-index: 3;
+  height: 60px;
+}
+#header .italy {
+  width: 100%;
+  position: absolute;
+  top: 60px;
+  background-color: var(--white);
+  border: none;
+  border-top: var(--green) 6px solid;
+  border-bottom: var(--red) 6px solid;
+  height: 18px;
+  margin: 0;
+}
+#header .logo {
+  position: absolute;
+  transition: all 1s ease-in-out;
+  top: 15px;
+  width: 72px;
+  right: calc(50vw - 36px);
+  z-index: 5;
+}
+#header .menu {
+  transition: right 0.5s ease-in-out;
+  width: 300px;
+  height: 100vh;
+  padding-bottom: 50px;
+  background-color: var(--gray-7);
+  position: fixed;
+  right: -300px;
+  top: 0;
+  z-index: 4;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#header .menu hr {
+  width: 100%;
+  border-bottom: none;
+  border-color: var(--black-10);
+  margin: 0;
+}
+#header .menu.logged nav ul li.divider {
+  display: flex;
+}
+#header .menu.logged nav ul li.hide-guest {
+  display: flex;
+}
+#header .menu.logged .footer > div {
+  display: flex;
+}
+#header .menu.logged .footer > .btn-register {
+  display: none;
+}
+#header .menu nav {
+  flex-direction: column;
+}
+#header .menu nav ul {
+  margin: 0;
+  padding: 0;
+  margin-top: 249px;
+  width: 100%;
+  flex-direction: column;
+}
+#header .menu nav ul li {
+  padding: 14px 0;
+  list-style: none;
+  justify-content: center;
+}
+#header .menu nav ul li a {
+  text-decoration: none;
+  color: var(--gray-0);
+}
+#header .menu nav ul li.hide-guest, #header .menu nav ul li.divider {
+  display: none;
+}
+#header .menu nav ul li hr {
+  margin: 15px 0;
+}
+#header .menu .footer {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+#header .menu .footer > div {
+  display: none;
+  padding: 15px;
+  width: 100%;
+  align-items: center;
+}
+#header .menu .footer > div picture {
+  margin-right: 10px;
+}
+#header .menu .footer > div picture img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+#header .menu .footer > div > div {
+  flex-direction: column;
+  flex: 1;
+}
+#header .menu .footer > div a {
+  color: var(--dark-0);
+  text-decoration: none;
+  font-size: 16px;
+}
+#header .menu .footer > div a small {
+  color: var(--gray-2);
+  font-size: 12px;
+}
+#header .menu .btn-register {
+  margin: 20px;
+  width: calc(300px - 40px);
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  border-radius: 6px;
+  color: var(--black);
+  background-color: var(--green);
+  color: var(--white);
+}
+#header .menu .btn-register:hover {
+  background-color: var(--black-10);
+}
+#header .menu .btn-register:active {
+  background-color: var(--black-75);
+}
+#header .menu .btn-register:hover {
+  background-color: var(--green-hover);
+}
+#header .menu .btn-register:active {
+  background-color: var(--green-active);
+}
+#header button {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 13px;
+}
+#header #btn-open, #header #btn-close {
+  position: absolute;
+  right: 0;
+}
+
+.open-menu {
+  overflow: hidden;
+}
+.open-menu #header .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--dark-1);
+  z-index: 4;
+}
+.open-menu #header .menu {
+  right: 0;
+}
+.open-menu #header .logo {
+  right: 87px;
+  width: 120px;
+}
+
+@media (min-width: 1200px) {
+  .open-menu {
+    overflow: initial;
+  }
+  .open-menu #header .overlay {
+    display: none;
+  }
+  .open-menu #header .logo {
+    width: 100px;
+    top: 17px;
+    right: calc(100vw - 150px);
+  }
+
+  #header {
+    height: 100px;
+  }
+  #header .italy {
+    top: 100px;
+  }
+  #header .logo {
+    width: 100px;
+    top: 17px;
+    right: calc(100vw - 150px);
+  }
+  #header #btn-open, #header #btn-close {
+    display: none;
+  }
+  #header .menu {
+    right: initial;
+    position: static;
+    background-color: initial;
+    width: 100%;
+    height: 100px;
+    flex-direction: row;
+    margin-left: 150px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+  #header .menu .btn-register {
+    margin: 0;
+    margin-right: 30px;
+    width: 200px;
+  }
+  #header .menu nav {
+    width: 100%;
+  }
+  #header .menu nav ul {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 0;
+  }
+  #header .menu nav ul li a {
+    font-size: 18px;
+    min-width: 120px;
+    padding: 10px 0;
+    text-align: center;
+  }
+  #header .menu nav ul li a:hover {
+    color: var(--black);
+  }
+  #header .menu .footer {
+    width: initial;
+    justify-content: center;
+  }
+  #header .menu .footer hr {
+    display: none;
+  }
+  #header .menu .footer > div {
+    height: 100px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
