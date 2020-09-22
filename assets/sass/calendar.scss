@@ -1,0 +1,140 @@
+.calendar {
+  flex-direction: column;
+  padding: 0 var(--space);
+  margin-bottom: var(--space);
+
+  .month {
+    justify-content: space-between;
+    align-items: center;
+    color: var(--gray-2);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+
+    h2 {
+      font-size: 22px;
+      font-weight: 400;
+    }
+
+    button {
+      @include button;
+      border: var(--gray-2) 2px solid;
+      border-radius: var(--border-radius);
+      color: var(--gray-2);
+    }
+
+    nav {
+      button {
+        min-width: 50px;
+      }
+
+      button + button {
+        margin-left: 10px;
+      }
+    }
+
+    .btn-today {
+      display: none;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .weekdays {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--gray-0);
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    li {
+      justify-content: center;
+      padding: 8px 0;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+
+  .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 12vw);
+    grid-gap: 10px;
+    color: var(--dark-0);
+
+    li {
+      font-size: 16px;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all .1s ease-in-out;
+
+      &:hover {
+        background-color: var(--gray-7);
+      }
+
+      &.active {
+        background-color: var(--blue);
+        color: var(--white);
+
+        &:hover {
+          background-color: var(--blue-hover);
+        }
+
+        &:active {
+          background-color: var(--blue-active);
+        }
+      }
+
+      &.selected {
+        background-color: var(--green);
+        color: var(--white);
+
+        &:hover {
+          background-color: var(--green-hover);
+        }
+
+        &:active {
+          background-color: var(--green-active);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .calendar {
+    max-width: 839px;
+
+    .month {
+      margin: var(--space) 0;
+
+      h2  {
+        font-size: 44px;
+      }
+
+      .btn-today {
+        display: flex;
+      }
+    }
+
+    .weekdays {
+      li {
+        font-size: 21px;
+        font-weight: bold;
+      }
+    }
+
+    .days {
+      grid-template-rows: repeat(5, calc(992px / 7));
+
+      li {
+        font-size: 38px;
+      }
+    }
+  }
+}

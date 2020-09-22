@@ -113,6 +113,503 @@ hr.divider {
     min-height: calc(100vh - 341px);
   }
 }
+.toast {
+  position: relative;
+  height: 80px;
+  width: 100%;
+  align-items: center;
+  padding: var(--space);
+  border: 1px solid transparent;
+  transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.toast .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 16px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  transition: 0.3s;
+  color: var(--black-50);
+  min-width: 50px;
+  margin: 15px;
+}
+.toast .close:hover {
+  color: var(--black-75);
+}
+.toast.sucess {
+  color: var(--success-color);
+  border-color: var(--success-border);
+  background-color: var(--success);
+}
+.toast.danger {
+  color: var(--danger-color);
+  border-color: var(--danger-border);
+  background-color: var(--danger);
+}
+
+form {
+  flex-direction: column;
+  width: 100%;
+  padding: 0 var(--space);
+}
+form .fields {
+  flex-direction: column;
+}
+form .field {
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: var(--space);
+}
+form .field label {
+  color: var(--gray-3);
+  font-size: 14px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transition: color 0.3s ease-in-out;
+  z-index: 2;
+}
+form .field input, form .field textarea, form .field select {
+  border: var(--gray-3) 1px solid;
+  line-height: 1.5em;
+  padding: 10px;
+  padding-top: 33px;
+  font-size: 16px;
+  color: var(--dark-0);
+  outline: none;
+  border-radius: var(--border-radius);
+  position: relative;
+  z-index: 1;
+  top: 0;
+  transition: border-color 0.3s ease-in-out;
+  width: 100%;
+  background-color: transparent;
+}
+form .field input:focus, form .field textarea:focus, form .field select:focus {
+  border-color: var(--green);
+}
+form .field input:focus + label, form .field textarea:focus + label, form .field select:focus + label {
+  color: var(--green);
+}
+form .field input[readonly], form .field textarea[readonly], form .field select[readonly] {
+  border: none;
+  color: var(--black);
+  font-weight: bold;
+  font-size: 22px;
+  text-transform: uppercase;
+  padding-bottom: 0;
+}
+form .field input[readonly] + label, form .field textarea[readonly] + label, form .field select[readonly] + label {
+  color: var(--gray-0);
+  text-transform: uppercase;
+}
+form button {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  border-radius: var(--border-radius);
+  color: var(--black);
+  background-color: var(--green);
+  color: var(--white);
+}
+form button:hover {
+  background-color: var(--black-10);
+}
+form button:active {
+  background-color: var(--black-75);
+}
+form button:hover {
+  background-color: var(--green-hover);
+}
+form button:active {
+  background-color: var(--green-active);
+}
+
+@media (min-width: 1200px) {
+  form {
+    max-width: 400px;
+  }
+  form .fields {
+    flex-direction: row;
+  }
+  form .fields .field {
+    margin-right: var(--space);
+  }
+  form .fields .field:last-child {
+    margin-right: 0;
+  }
+  form .fields .field textarea {
+    min-height: 250px;
+  }
+  form .fields button {
+    max-width: 340px;
+  }
+}
+header.page-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+header.page-title h1, header.page-title h2, header.page-title h3, header.page-title h4, header.page-title h5, header.page-title h6 {
+  color: var(--green);
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+}
+header.page-title hr {
+  width: 68px;
+  border: none;
+  border-top: 4px solid var(--red);
+  margin: 10px 0;
+}
+
+.page {
+  flex-direction: column;
+  height: calc(100vh - 140px);
+  overflow: auto;
+}
+.page .page-title {
+  margin: var(--space);
+  width: calc(100% - calc(var(--space) * 2));
+}
+.page > header {
+  width: 100%;
+  min-height: 130px;
+  background-color: var(--black);
+  color: var(--white);
+  justify-content: center;
+  align-items: center;
+  margin-top: 18px;
+}
+.page > header h1 {
+  font-size: 23px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.page > main {
+  margin-bottom: 80px;
+  flex-direction: column;
+}
+.page > main .toast {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+}
+.page > main .toast.open {
+  transform: translateY(-80px);
+}
+.page footer.fixed {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: var(--gray-12);
+  height: 80px;
+  left: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space);
+  z-index: 4;
+}
+.page footer.fixed button, .page footer.fixed a {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  border-radius: var(--border-radius);
+  color: var(--black);
+  background-color: var(--gray-3);
+  color: var(--gray-0);
+}
+.page footer.fixed button:hover, .page footer.fixed a:hover {
+  background-color: var(--black-10);
+}
+.page footer.fixed button:active, .page footer.fixed a:active {
+  background-color: var(--black-75);
+}
+.page footer.fixed button:hover, .page footer.fixed a:hover {
+  background-color: var(--gray-hover);
+}
+.page footer.fixed button:active, .page footer.fixed a:active {
+  background-color: var(--gray-active);
+}
+.page footer.fixed button[type=submit], .page footer.fixed a.black {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  border-radius: var(--border-radius);
+  color: var(--black);
+  background-color: var(--black);
+  color: var(--white);
+}
+.page footer.fixed button[type=submit]:hover, .page footer.fixed a.black:hover {
+  background-color: var(--black-10);
+}
+.page footer.fixed button[type=submit]:active, .page footer.fixed a.black:active {
+  background-color: var(--black-75);
+}
+.page footer.fixed button[type=submit]:hover, .page footer.fixed a.black:hover {
+  background-color: var(--black-hover);
+}
+.page footer.fixed button[type=submit]:active, .page footer.fixed a.black:active {
+  background-color: var(--black-active);
+}
+.page.blue > header {
+  background-color: var(--blue);
+}
+.page.blue footer.fixed button[type=submit], .page.blue footer.fixed a.black {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  border-radius: var(--border-radius);
+  color: var(--black);
+  background-color: var(--blue);
+  color: var(--white);
+}
+.page.blue footer.fixed button[type=submit]:hover, .page.blue footer.fixed a.black:hover {
+  background-color: var(--black-10);
+}
+.page.blue footer.fixed button[type=submit]:active, .page.blue footer.fixed a.black:active {
+  background-color: var(--black-75);
+}
+.page.blue footer.fixed button[type=submit]:hover, .page.blue footer.fixed a.black:hover {
+  background-color: var(--blue-hover);
+}
+.page.blue footer.fixed button[type=submit]:active, .page.blue footer.fixed a.black:active {
+  background-color: var(--blue-active);
+}
+.page.green > header {
+  background-color: var(--green);
+}
+.page.green footer.fixed button[type=submit], .page.green footer.fixed a.black {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  border-radius: var(--border-radius);
+  color: var(--black);
+  background-color: var(--green);
+  color: var(--white);
+}
+.page.green footer.fixed button[type=submit]:hover, .page.green footer.fixed a.black:hover {
+  background-color: var(--black-10);
+}
+.page.green footer.fixed button[type=submit]:active, .page.green footer.fixed a.black:active {
+  background-color: var(--black-75);
+}
+.page.green footer.fixed button[type=submit]:hover, .page.green footer.fixed a.black:hover {
+  background-color: var(--green-hover);
+}
+.page.green footer.fixed button[type=submit]:active, .page.green footer.fixed a.black:active {
+  background-color: var(--green-active);
+}
+
+@media (min-width: 1200px) {
+  .page > header {
+    justify-content: flex-start;
+    padding-left: 185px;
+    min-height: 160px;
+  }
+  .page > header h1 {
+    font-size: 32px;
+  }
+  .page footer.fixed {
+    justify-content: flex-start;
+  }
+  .page footer.fixed button + button, .page footer.fixed a + a, .page footer.fixed button + a, .page footer.fixed a + button {
+    margin-right: var(--space);
+  }
+  .page footer.fixed button, .page footer.fixed a {
+    order: 1;
+  }
+  .page footer.fixed button:first-child, .page footer.fixed a:first-child {
+    order: 2;
+  }
+}
+.calendar {
+  flex-direction: column;
+  padding: 0 var(--space);
+  margin-bottom: var(--space);
+}
+.calendar .month {
+  justify-content: space-between;
+  align-items: center;
+  color: var(--gray-2);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.calendar .month h2 {
+  font-size: 22px;
+  font-weight: 400;
+}
+.calendar .month button {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  border-radius: var(--border-radius);
+  color: var(--black);
+  border: var(--gray-2) 2px solid;
+  border-radius: var(--border-radius);
+  color: var(--gray-2);
+}
+.calendar .month button:hover {
+  background-color: var(--black-10);
+}
+.calendar .month button:active {
+  background-color: var(--black-75);
+}
+.calendar .month nav button {
+  min-width: 50px;
+}
+.calendar .month nav button + button {
+  margin-left: 10px;
+}
+.calendar .month .btn-today {
+  display: none;
+}
+.calendar ul {
+  margin: 0;
+  padding: 0;
+}
+.calendar .weekdays {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--gray-0);
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.calendar .weekdays li {
+  justify-content: center;
+  padding: 8px 0;
+  font-size: 12px;
+  font-weight: bold;
+}
+.calendar .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 12vw);
+  grid-gap: 10px;
+  color: var(--dark-0);
+}
+.calendar .days li {
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+.calendar .days li:hover {
+  background-color: var(--gray-7);
+}
+.calendar .days li.active {
+  background-color: var(--blue);
+  color: var(--white);
+}
+.calendar .days li.active:hover {
+  background-color: var(--blue-hover);
+}
+.calendar .days li.active:active {
+  background-color: var(--blue-active);
+}
+.calendar .days li.selected {
+  background-color: var(--green);
+  color: var(--white);
+}
+.calendar .days li.selected:hover {
+  background-color: var(--green-hover);
+}
+.calendar .days li.selected:active {
+  background-color: var(--green-active);
+}
+
+@media (min-width: 992px) {
+  .calendar {
+    max-width: 839px;
+  }
+  .calendar .month {
+    margin: var(--space) 0;
+  }
+  .calendar .month h2 {
+    font-size: 44px;
+  }
+  .calendar .month .btn-today {
+    display: flex;
+  }
+  .calendar .weekdays li {
+    font-size: 21px;
+    font-weight: bold;
+  }
+  .calendar .days {
+    grid-template-rows: repeat(5, calc(992px / 7));
+  }
+  .calendar .days li {
+    font-size: 38px;
+  }
+}
 #header {
   min-width: 320px;
   width: 100%;
@@ -244,7 +741,7 @@ hr.divider {
   outline: none;
   cursor: pointer;
   background: transparent;
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   color: var(--black);
   background-color: var(--green);
   color: var(--white);
