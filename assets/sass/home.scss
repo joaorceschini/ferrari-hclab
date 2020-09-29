@@ -1,0 +1,111 @@
+#home {
+  flex-direction: column;
+  margin-top: -80px;
+
+  > header {
+    width: 100%;
+    min-width: 320px;
+    min-height: 675px;
+    height: 100vh;
+    background-image: url("../images/ferrari-vermelha-1200.webp");
+    background-size: cover;
+    background-position-x: 80%;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: var(--space);
+
+    h1 {
+      color: var(--white);
+      font-size: 80px;
+      font-weight: bold;
+      text-align: right;
+    }
+
+    a {
+      @include button;
+      border: var(--white) 2px solid;
+      color: var(--white);
+      &:hover {
+        background-color: var(--white);
+        color: var(--black);
+      }
+    }
+
+    ul {
+      display: none;
+    }
+  }
+
+  .gallery {
+    min-width: 320px;
+    flex-direction: column;
+
+    figure {
+      width: 100%;
+      margin: 0;
+      margin-top: 1px;
+      position: relative;
+
+      img {
+        width: 100%;
+      }
+
+      figcaption {
+        position: absolute;
+        left: 0;
+        bottom: var(--space);
+        background-color: var(--black-75);
+        color: var(--white);
+        padding: var(--space);
+
+        h2, p {
+          margin: 0;
+        }
+
+        h2 {
+          font-size: 14px;
+          font-weight: bold;
+        }
+
+        p {
+          font-size: 9px;
+          color: var(--gray-3);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  #home {
+    .gallery {
+      flex-direction: row;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  #home {
+    margin-top: -100px;
+
+    hr {
+      top: 100px;
+    }
+
+    > header {
+      max-height: initial;
+      background-image: url('../images/ferrari-vermelha.webp');
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  #home {
+    > header {
+      background-image: url('../images/ferrari-vermelha@2x.webp');
+    }
+  }
+}

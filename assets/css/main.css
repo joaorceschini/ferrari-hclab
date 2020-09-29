@@ -953,5 +953,267 @@ header.page-title hr {
     color: var(--white);
   }
 }
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1ps solid transparent;
+  border-radius: var(--border-radius);
+}
+.alert.danger {
+  color: var(--danger-color);
+  background-color: var(--danger);
+  border-color: var(--danger-border);
+}
+.alert.success {
+  color: var(--success-color);
+  background-color: var(--success);
+  border-color: var(--success-border);
+}
+
+#home {
+  flex-direction: column;
+  margin-top: -80px;
+}
+#home > header {
+  width: 100%;
+  min-width: 320px;
+  min-height: 675px;
+  height: 100vh;
+  background-image: url("../images/ferrari-vermelha-1200.webp");
+  background-size: cover;
+  background-position-x: 80%;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: var(--space);
+}
+#home > header h1 {
+  color: var(--white);
+  font-size: 80px;
+  font-weight: bold;
+  text-align: right;
+}
+#home > header a {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  border-radius: var(--border-radius);
+  color: var(--black);
+  border: var(--white) 2px solid;
+  color: var(--white);
+}
+#home > header a:hover {
+  background-color: var(--black-10);
+}
+#home > header a:active {
+  background-color: var(--black-75);
+}
+#home > header a:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+#home > header ul {
+  display: none;
+}
+#home .gallery {
+  min-width: 320px;
+  flex-direction: column;
+}
+#home .gallery figure {
+  width: 100%;
+  margin: 0;
+  margin-top: 1px;
+  position: relative;
+}
+#home .gallery figure img {
+  width: 100%;
+}
+#home .gallery figure figcaption {
+  position: absolute;
+  left: 0;
+  bottom: var(--space);
+  background-color: var(--black-75);
+  color: var(--white);
+  padding: var(--space);
+}
+#home .gallery figure figcaption h2, #home .gallery figure figcaption p {
+  margin: 0;
+}
+#home .gallery figure figcaption h2 {
+  font-size: 14px;
+  font-weight: bold;
+}
+#home .gallery figure figcaption p {
+  font-size: 9px;
+  color: var(--gray-3);
+}
+
+@media (min-width: 576px) {
+  #home .gallery {
+    flex-direction: row;
+  }
+}
+@media (min-width: 1200px) {
+  #home {
+    margin-top: -100px;
+  }
+  #home hr {
+    top: 100px;
+  }
+  #home > header {
+    max-height: initial;
+    background-image: url("../images/ferrari-vermelha.webp");
+  }
+}
+@media (min-width: 1920px) {
+  #home > header {
+    background-image: url("../images/ferrari-vermelha@2x.webp");
+  }
+}
+#service {
+  margin-top: var(--space);
+  flex-direction: column;
+}
+#service h2 {
+  padding: 0 var(--space);
+  margin: 0;
+  font-size: 27px;
+  font-weight: bold;
+  color: var(--dark-0);
+  text-transform: uppercase;
+}
+#service h2 small {
+  color: var(--gray-2);
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+}
+#service > img {
+  width: 100%;
+  margin: var(--space) 0;
+}
+#service > div {
+  flex-direction: column;
+}
+#service > div a {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  border-radius: var(--border-radius);
+  color: var(--black);
+  background-color: var(--green);
+  color: var(--white);
+  margin: 0 var(--space);
+}
+#service > div a:hover {
+  background-color: var(--black-10);
+}
+#service > div a:active {
+  background-color: var(--black-75);
+}
+#service > div a:hover {
+  background-color: var(--green-hover);
+}
+#service > div a:active {
+  background-color: var(--green-active);
+}
+#service > div .icons {
+  flex-direction: column;
+}
+#service > div .icons figure {
+  margin-top: var(--space);
+  flex-direction: column;
+  align-items: center;
+}
+#service > div .icons figure img {
+  width: 100px;
+}
+#service > div .icons figure figcaption {
+  margin: var(--space) auto;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--gray-0);
+}
+
+#contact {
+  flex-direction: column;
+}
+#contact > h2 {
+  font-size: 27px;
+  font-weight: bold;
+  color: var(--dark-0);
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0 var(--space);
+}
+#contact p {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-1);
+}
+#contact > section {
+  flex-direction: column;
+}
+#contact #map {
+  background-image: url("../images/mapa.png");
+  height: 263px;
+  width: 100%;
+  margin: var(--space);
+}
+#contact .contacts {
+  margin: 0;
+  padding: var(--space);
+  margin-top: var(--space);
+  flex-direction: column;
+}
+#contact .contacts li {
+  border: var(--gray-3) 1px solid;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space);
+  margin-bottom: calc(var(--space) * 3);
+  text-align: center;
+  color: var(--gray-1);
+}
+#contact .contacts li img {
+  max-width: 100px;
+  background-color: var(--white);
+  margin: 0 auto;
+  margin-top: 60px;
+  padding: 0 var(--space);
+}
+#contact .contacts li p {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 300;
+}
+#contact .contacts li p.title {
+  font-weight: 600;
+  font-size: 24px;
+}
 
 /*# sourceMappingURL=main.css.map */
