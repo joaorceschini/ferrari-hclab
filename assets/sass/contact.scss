@@ -1,66 +1,100 @@
 #contact {
   flex-direction: column;
-
   > h2 {
-    font-size: 27px;
-    font-weight: bold;
-    color: var(--dark-0);
-    text-transform: uppercase;
-    margin: 0;
-    padding: 0 var(--space);
+      font-size: 27px;
+      font-weight: bold;
+      color: var(--dark-0);
+      text-transform: uppercase;
+      margin: 0;
+      padding: 0 var(--space);
   }
-
   p {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--gray-1);
-  }
-
-  > section {
-    flex-direction: column;
-  }
-
-  #map {
-    background-image: url('../images/mapa.png');
-    height: 263px;
-    width: 100%;
-    margin: var(--space);
-  }
-
-  .contacts {
-    margin: 0;
-    padding: var(--space);
-    margin-top: var(--space);
-    flex-direction: column;
-
-    li {
-      border: var(--gray-3) 1px solid;
-      width: 100%;
-      flex-direction: column;
-      justify-content: center;
-      padding: var(--space);
-      margin-bottom: calc(var(--space) * 3);
-      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
       color: var(--gray-1);
-
-      img {
-        max-width: 100px;
-        background-color: var(--white);
-        margin: 0 auto;
-        margin-top: 60px;
-        padding: 0 var(--space);
+  }
+  > section {
+      flex-direction: column;
+  }
+  #map {
+      background-image: url('../images/mapa.png');
+      height: 263px;
+      width: 100%;
+      margin-top: var(--space);
+  }
+  .contacts {
+      margin: 0;
+      padding: var(--space);
+      margin-top: var(--space);
+      flex-direction: column;
+      li {
+          border: var(--gray-3) 1px solid;
+          width: 100%;
+          flex-direction: column;
+          justify-content: center;
+          padding: var(--space);
+          margin-bottom: calc(var(--space) * 3);
+          text-align: center;
+          color: var(--gray-1);
+          img {
+              max-width: 100px;
+              background-color: var(--white);
+              margin: 0 auto;
+              margin-top: -60px;
+              padding: 0 var(--space);
+          }
+          p {
+              margin: 0;
+              font-size: 25px;
+              font-weight: 300;
+              &.title {
+                  font-weight: 600;
+                  font-size: 24px;
+              }
+          }
       }
+  }
+}
 
-      p {
-        margin: 0;
-        font-size: 25px;
-        font-weight: 300;
-
-        &.title {
-          font-weight: 600;
-          font-size: 24px;
-        }
+@media (min-width: 992px) {
+  #contact {
+      > h2 {
+          font-size:  60px;
       }
-    }
+      > section {
+          flex-direction:  row;
+          form, #map {
+              flex: 1;
+          }
+          form {
+             max-width: unset;
+             textarea {
+                 min-height: 160px;
+                 resize: vertical;
+             }
+          }
+          #map {
+              margin-left: 0;
+              height: 570px;
+          }
+      }
+      .contacts {
+          flex-direction: row;
+          li + li {
+              margin-left: var(--space);
+          }
+      }
+  }
+}
+
+@media (min-width: 1200px) {
+  #contact {
+      > section {
+          form {
+              textarea {
+                  min-height: 245px;
+              }
+          }   
+      }
   }
 }

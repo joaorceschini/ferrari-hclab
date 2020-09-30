@@ -1,0 +1,109 @@
+#auth {
+    min-width: 320px;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    > section {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        a {
+            display: contents;
+            img {
+                position: absolute;
+                width: 100px;
+                top: 40px;
+                z-index: 1;
+            }
+        }
+        form {
+            margin-top: 170px;
+            width: 100%;
+            max-width: unset;
+            &.hide {
+                display: none;
+            }
+            .message {
+                align-items: center;
+                justify-content: center;
+                img {
+                    margin-right: 5px;
+                }
+                span {
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: var(--dark-0);
+                }
+            }
+            h1 {
+               text-align: center;
+               color: var(--green) ;
+               font-size: 28px;
+               font-weight: 600;
+               margin: var(--space) auto;
+            }
+            hr {
+                width: 68px;
+                border: none;
+                border-top: 4px solid var(--red);
+                margin-bottom: var(--space);
+            }
+            .actions {
+                justify-content: space-between;
+                align-items: center;
+                > div {
+                    flex-direction: column;
+                    a {
+                        display: flex;
+                    }
+                }
+                .link {
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: var(--dark-0);
+                    text-decoration: none;
+                    &:hover {
+                        color: var(--gray-0);
+                    }
+                    &:active {
+                        color: var(--black);
+                    }
+                }
+            }
+            &#reset {
+                .actions {
+                    justify-content: flex-end;
+                }
+            }
+        }
+        p {
+            color: var(--gray-9);
+            font-size: 16px;
+        }
+    }
+}
+
+@media (min-width: 500px) {
+    #auth {
+        > section {
+            width: 500px;
+            height: initial;
+            a {
+                img {
+                    top: 125px;
+                }
+            }
+            form {
+                border: var(--gray-8) 1px solid;
+                border-radius: calc(2 * var(--border-radius));
+                width: 100%;
+                padding: 50px;
+                padding-top: 100px;
+            }
+        }
+    }
+}

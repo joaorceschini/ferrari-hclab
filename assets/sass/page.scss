@@ -1,23 +1,21 @@
 header {
   &.page-title {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-
-    h1, h2, h3, h4, h5, h6 {
-      color: var(--green);
-      margin: 0;
-      font-size: 32px;
-      font-weight: 600;
-    }
-
-    hr {
-      width: 68px;
-      border: none;
-      border-top: 4px solid var(--red);
-      margin: 10px 0;
-    }
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      h1, h2, h3, h4, h5, h6 {
+          color: var(--green);
+          margin: 0;
+          font-size: 23px;
+          font-weight: 600;
+      }
+      hr {
+          width:68px;
+          border: none;
+          border-top: 4px solid var(--red);
+          margin: 10px 0;
+      }
   }
 }
 
@@ -25,116 +23,105 @@ header {
   flex-direction: column;
   height: calc(100vh - 140px);
   overflow: auto;
-
   .page-title {
-    margin: var(--space);
-    width: calc(100% - calc(var(--space) * 2));
+      margin: var(--space);
+      width: calc(100% - calc(var(--space) * 2));
   }
-
   > header {
-    width: 100%;
-    min-height: 130px;
-    background-color: var(--black);
-    color: var(--white);
-    justify-content: center;
-    align-items: center;
-    margin-top: 18px;
-
-    h1 {
-      font-size: 23px;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
+      width: 100%;
+      min-height: 130px;
+      background-color: var(--black);
+      color: var(--white);
+      justify-content: center;
+      align-items: center;
+      margin-top: 18px;
+      h1 {
+          font-size: 23px;
+          font-weight: bold;
+          text-transform: uppercase;
+      }
   }
-
   > main {
-    margin-bottom: 80px;
-    flex-direction: column;
-
-    .toast {
+      margin-bottom: 80px;
+      flex-direction: column;
+      .toast {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          z-index: 3;
+          &.open {
+              transform: translateY(-80px);
+          }
+      }
+  }
+  footer.fixed {
+      width: 100%;
       position: fixed;
       bottom: 0;
+      background-color: var(--gray-12);
+      height: 80px;
       left: 0;
-      z-index: 3;
-
-      &.open {
-        transform: translateY(-80px);
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space);
+      z-index: 4;
+      button, a {
+          @include button-gray;
       }
-    }
+      button[type=submit], a.black {
+          @include button-black;
+      }
   }
-
-  footer.fixed {
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    background-color: var(--gray-12);
-    height: 80px;
-    left: 0;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--space);
-    z-index: 4;
-
-    button, a {
-      @include button-gray;
-    }
-
-    button[type="submit"], a.black {
-      @include button-black;
-    }
-  }
-
   &.blue {
-    > header {
-      background-color: var(--blue);  
-    }
-
-    footer.fixed {
-      button[type="submit"], a.black {
-        @include button-blue;
+      > header {
+          background-color: var(--blue);
       }
-    }
+      footer.fixed {
+          button[type=submit], a.black {
+              @include button-blue;
+          } 
+      }
   }
-
   &.green {
-    > header {
-      background-color: var(--green);  
-    }
-
-    footer.fixed {
-      button[type="submit"], a.black {
-        @include button-green;
+      > header {
+          background-color: var(--green);
       }
-    }
+      footer.fixed {
+          button[type=submit], a.black {
+              @include button-green;
+          } 
+      }
   }
 }
 
 @media (min-width: 1200px) {
+  header {
+      &.page-title {
+          h1, h2, h3, h4, h5, h6 {
+              font-size: 30px;
+          }
+      }
+  }
   .page {
-    > header {
-      justify-content: flex-start;
-      padding-left: 185px;
-      min-height: 160px;
-
-      h1 {
-        font-size: 32px;
+      > header {
+          justify-content: flex-start;
+          padding-left: 185px;
+          min-height: 160px;
+          h1 {
+              font-size: 32px;
+          }
       }
-    }
-    
-    footer.fixed {
-      justify-content: flex-start;
-
-      button + button, a + a, button + a, a + button {
-        margin-right: var(--space);
+      footer.fixed {
+          justify-content: flex-start;
+          button + button, a + a, button + a, a + button {
+              margin-right: var(--space);
+          }
+          button, a {
+              order: 1;
+              &:first-child {
+                  order: 2;
+              }
+          }
       }
-
-      button, a {
-        order: 1;
-
-        &:first-child {
-          order: 2;
-        }
-      }
-    }
   }
 }

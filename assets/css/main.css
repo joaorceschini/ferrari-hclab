@@ -86,7 +86,7 @@
   font-weight: 400;
 }
 
-body, div, article, aside, footer, header, main, nav, section, ul, ol, li, button, figure, picture {
+body, div, article, aside, footer, header, main, nav, section, ul, ol, li, button, figure, picture, hr, form {
   display: flex;
 }
 
@@ -111,6 +111,43 @@ hr.divider {
 @media (min-width: 1200px) {
   body > main {
     min-height: calc(100vh - 341px);
+  }
+}
+.loading-wrap {
+  align-items: center;
+  justify-content: center;
+}
+.loading-wrap .loading {
+  margin-right: 5px;
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+.loading-wrap .loading div {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  position: absolute;
+  border: 3px solid var(--green);
+  border-color: var(--green) transparent transparent transparent;
+  animation: loading 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+.loading-wrap .loading div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.loading-wrap .loading div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.loading-wrap .loading div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 .toast {
@@ -267,7 +304,7 @@ header.page-title {
 header.page-title h1, header.page-title h2, header.page-title h3, header.page-title h4, header.page-title h5, header.page-title h6 {
   color: var(--green);
   margin: 0;
-  font-size: 32px;
+  font-size: 23px;
   font-weight: 600;
 }
 header.page-title hr {
@@ -457,6 +494,10 @@ header.page-title hr {
 }
 
 @media (min-width: 1200px) {
+  header.page-title h1, header.page-title h2, header.page-title h3, header.page-title h4, header.page-title h5, header.page-title h6 {
+    font-size: 30px;
+  }
+
   .page > header {
     justify-content: flex-start;
     padding-left: 185px;
@@ -613,10 +654,10 @@ header.page-title hr {
 #header {
   min-width: 320px;
   width: 100%;
+  height: 60px;
   background-color: var(--gray-5);
   position: relative;
-  z-index: 3;
-  height: 60px;
+  z-index: 5;
 }
 #header .italy {
   width: 100%;
@@ -635,7 +676,7 @@ header.page-title hr {
   top: 15px;
   width: 72px;
   right: calc(50vw - 36px);
-  z-index: 5;
+  z-index: 7;
 }
 #header .menu {
   transition: right 0.5s ease-in-out;
@@ -646,7 +687,7 @@ header.page-title hr {
   position: fixed;
   right: -300px;
   top: 0;
-  z-index: 4;
+  z-index: 6;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -665,7 +706,7 @@ header.page-title hr {
 #header .menu.logged .footer > div {
   display: flex;
 }
-#header .menu.logged .footer > .btn-register {
+#header .menu.logged .footer > a.btn-register {
   display: none;
 }
 #header .menu nav {
@@ -674,9 +715,11 @@ header.page-title hr {
 #header .menu nav ul {
   margin: 0;
   padding: 0;
-  margin-top: 249px;
   width: 100%;
   flex-direction: column;
+  margin-top: 169px;
+  max-height: calc(100vh - 250px);
+  overflow-y: auto;
 }
 #header .menu nav ul li {
   padding: 14px 0;
@@ -779,7 +822,7 @@ header.page-title hr {
   width: 100vw;
   height: 100vh;
   background-color: var(--dark-1);
-  z-index: 4;
+  z-index: 5;
 }
 .open-menu #header .menu {
   right: 0;
@@ -826,7 +869,7 @@ header.page-title hr {
     margin-left: 150px;
     justify-content: space-between;
     align-items: center;
-    padding: 0;
+    padding-bottom: 0;
   }
   #header .menu .btn-register {
     margin: 0;
@@ -1158,6 +1201,34 @@ header.page-title hr {
   color: var(--gray-0);
 }
 
+@media (min-width: 768px) {
+  #service > div {
+    flex-direction: column-reverse;
+  }
+  #service > div .icons {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  #service > div .icons figure {
+    margin: calc(5 * var(--space)) 0;
+  }
+  #service > div .icons figure img {
+    width: 150px;
+  }
+  #service > div a {
+    width: 200px;
+    margin: calc(3 * var(--space)) auto;
+    text-align: center;
+  }
+}
+@media (min-width: 992px) {
+  #service h2 {
+    font-size: 60px;
+  }
+  #service h2 small {
+    font-size: 35px;
+  }
+}
 #contact {
   flex-direction: column;
 }
@@ -1181,7 +1252,7 @@ header.page-title hr {
   background-image: url("../images/mapa.png");
   height: 263px;
   width: 100%;
-  margin: var(--space);
+  margin-top: var(--space);
 }
 #contact .contacts {
   margin: 0;
@@ -1203,7 +1274,7 @@ header.page-title hr {
   max-width: 100px;
   background-color: var(--white);
   margin: 0 auto;
-  margin-top: 60px;
+  margin-top: -60px;
   padding: 0 var(--space);
 }
 #contact .contacts li p {
@@ -1214,6 +1285,169 @@ header.page-title hr {
 #contact .contacts li p.title {
   font-weight: 600;
   font-size: 24px;
+}
+
+@media (min-width: 992px) {
+  #contact > h2 {
+    font-size: 60px;
+  }
+  #contact > section {
+    flex-direction: row;
+  }
+  #contact > section form, #contact > section #map {
+    flex: 1;
+  }
+  #contact > section form {
+    max-width: unset;
+  }
+  #contact > section form textarea {
+    min-height: 160px;
+    resize: vertical;
+  }
+  #contact > section #map {
+    margin-left: 0;
+    height: 570px;
+  }
+  #contact .contacts {
+    flex-direction: row;
+  }
+  #contact .contacts li + li {
+    margin-left: var(--space);
+  }
+}
+@media (min-width: 1200px) {
+  #contact > section form textarea {
+    min-height: 245px;
+  }
+}
+#auth {
+  min-width: 320px;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+#auth > section {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#auth > section a {
+  display: contents;
+}
+#auth > section a img {
+  position: absolute;
+  width: 100px;
+  top: 40px;
+  z-index: 1;
+}
+#auth > section form {
+  margin-top: 170px;
+  width: 100%;
+  max-width: unset;
+}
+#auth > section form.hide {
+  display: none;
+}
+#auth > section form .message {
+  align-items: center;
+  justify-content: center;
+}
+#auth > section form .message img {
+  margin-right: 5px;
+}
+#auth > section form .message span {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark-0);
+}
+#auth > section form h1 {
+  text-align: center;
+  color: var(--green);
+  font-size: 28px;
+  font-weight: 600;
+  margin: var(--space) auto;
+}
+#auth > section form hr {
+  width: 68px;
+  border: none;
+  border-top: 4px solid var(--red);
+  margin-bottom: var(--space);
+}
+#auth > section form .actions {
+  justify-content: space-between;
+  align-items: center;
+}
+#auth > section form .actions > div {
+  flex-direction: column;
+}
+#auth > section form .actions > div a {
+  display: flex;
+}
+#auth > section form .actions .link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark-0);
+  text-decoration: none;
+}
+#auth > section form .actions .link:hover {
+  color: var(--gray-0);
+}
+#auth > section form .actions .link:active {
+  color: var(--black);
+}
+#auth > section form#reset .actions {
+  justify-content: flex-end;
+}
+#auth > section p {
+  color: var(--gray-9);
+  font-size: 16px;
+}
+
+@media (min-width: 500px) {
+  #auth > section {
+    width: 500px;
+    height: initial;
+  }
+  #auth > section a img {
+    top: 125px;
+  }
+  #auth > section form {
+    border: var(--gray-8) 1px solid;
+    border-radius: calc(2 * var(--border-radius));
+    width: 100%;
+    padding: 50px;
+    padding-top: 100px;
+  }
+}
+#change-photo form {
+  align-items: center;
+  margin-top: var(--space);
+}
+#change-photo form img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+#change-photo form #file {
+  display: none;
+}
+#change-photo form .choose-photo {
+  margin: var(--space) 0;
+  min-width: 256px;
+}
+
+@media (min-width: 1200px) {
+  #change-photo form img {
+    width: 256px;
+    height: 256px;
+  }
+}
+#change-password form .page-title {
+  margin: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
