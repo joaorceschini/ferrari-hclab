@@ -1320,6 +1320,66 @@ header.page-title hr {
     min-height: 245px;
   }
 }
+#error .columns, #error .column {
+  flex-direction: column;
+}
+#error header {
+  margin: 0;
+  margin-top: 120px;
+  padding: 0 50px;
+  height: initial;
+}
+#error header h1 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.5em;
+}
+#error header h1 b {
+  color: var(--red);
+}
+#error header h1 .desktop {
+  display: none;
+}
+#error p {
+  padding: 0 50px;
+  font-size: 20px;
+  color: var(--gray-0);
+}
+#error img {
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+@media (min-width: 576px) {
+  #error header {
+    height: initial;
+    min-height: initial;
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  #error .columns {
+    flex-direction: row;
+    align-items: center;
+  }
+  #error img {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1200px) {
+  #error header h1 .desktop {
+    display: flex;
+  }
+  #error header h1 .mobile {
+    display: none;
+  }
+  #error .column {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
 #auth {
   min-width: 320px;
   width: 100vw;
@@ -1448,6 +1508,252 @@ header.page-title hr {
 }
 #change-password form .page-title {
   margin: 0;
+}
+
+#schedules main > div {
+  flex-direction: column;
+}
+#schedules main > div ul {
+  margin: 0;
+  padding: 0 var(--space);
+  flex-direction: column;
+}
+#schedules main > div ul li {
+  flex-direction: column;
+}
+#schedules main > div ul li > section {
+  flex-wrap: wrap;
+}
+#schedules main > div ul li > section > div {
+  width: 50%;
+  flex-direction: column;
+}
+#schedules main > div ul li > section > div label, #schedules main > div ul li > section > div span {
+  font-size: 16px;
+  margin: 10px 0;
+  color: var(--dark-0);
+}
+#schedules main > div ul li > section > div label {
+  font-weight: bold;
+}
+#schedules main > div ul li button {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  border-radius: var(--border-radius);
+  color: var(--black);
+  background-color: var(--red);
+  color: var(--white);
+  max-width: 150px;
+  align-self: center;
+}
+#schedules main > div ul li button:hover {
+  background-color: var(--black-10);
+}
+#schedules main > div ul li button:active {
+  background-color: var(--black-75);
+}
+#schedules main > div ul li button:hover {
+  background-color: var(--red-hover);
+}
+#schedules main > div ul li button:active {
+  background-color: var(--red-active);
+}
+#schedules main > div ul li + li {
+  border-top: var(--gray-10) 1px solid;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+#schedules footer.fixed {
+  justify-content: center;
+}
+#schedules footer.fixed a {
+  padding: 0 var(--space);
+}
+
+@media (min-width: 992px) {
+  #schedules main > div ul li {
+    flex-direction: row;
+    justify-content: space-between;
+    width: fit-content;
+  }
+  #schedules main > div ul li > section {
+    flex-wrap: nowrap;
+    flex: 1;
+    max-width: 1000px;
+  }
+  #schedules main > div ul li > section > div {
+    width: initial;
+    min-width: 200px;
+  }
+  #schedules main > div ul li > section > div label {
+    display: none;
+  }
+  #schedules main > div ul li > section > div.service {
+    flex: 1;
+  }
+  #schedules main > div ul li button {
+    align-self: flex-end;
+  }
+  #schedules main > div ul li:first-child > section > div label {
+    display: flex;
+  }
+  #schedules footer.fixed {
+    justify-content: flex-start;
+  }
+}
+#time-options h3 {
+  margin: 0;
+  margin-bottom: var(--space);
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#time-options .options {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#time-options .options label {
+  width: calc(50% - 10px);
+  margin-bottom: var(--space);
+}
+#time-options .options label span {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  border-radius: var(--border-radius);
+  color: var(--black);
+  display: flex;
+  width: 100%;
+  background-color: var(--gray-10);
+  color: var(--dark-0);
+}
+#time-options .options label span:hover {
+  background-color: var(--black-10);
+}
+#time-options .options label span:active {
+  background-color: var(--black-75);
+}
+#time-options .options label input {
+  display: none;
+}
+#time-options .options label input:checked + span {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  border-radius: var(--border-radius);
+  color: var(--black);
+  background-color: var(--blue);
+  color: var(--white);
+}
+#time-options .options label input:checked + span:hover {
+  background-color: var(--black-10);
+}
+#time-options .options label input:checked + span:active {
+  background-color: var(--black-75);
+}
+#time-options .options label input:checked + span:hover {
+  background-color: var(--blue-hover);
+}
+#time-options .options label input:checked + span:active {
+  background-color: var(--blue-active);
+}
+
+@media (min-width: 1200px) {
+  #time-options form {
+    max-width: 900px;
+  }
+  #time-options .options {
+    justify-content: flex-start;
+  }
+  #time-options .options label {
+    width: calc(25% - var(--space));
+    margin-right: var(--space);
+  }
+  #time-options h3 {
+    font-size: 22px;
+  }
+}
+#schedules-services .options {
+  flex-direction: column;
+  margin-top: var(--space);
+}
+#schedules-services .options label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: var(--space);
+}
+#schedules-services .options label .square {
+  width: 24px;
+  height: 24px;
+  border: var(--gray-10) 2px solid;
+  justify-content: center;
+  align-items: center;
+}
+#schedules-services .options label .square > div {
+  width: 14px;
+  height: 14px;
+  background-color: var(--gray);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#schedules-services .options label:hover .square {
+  border: var(--gray-8) 2px solid;
+}
+#schedules-services .options label:hover .square > div {
+  opacity: 0.2;
+}
+#schedules-services .options label input {
+  display: none;
+}
+#schedules-services .options label input:checked + .square > div {
+  opacity: 1;
+  background-color: var(--blue);
+}
+#schedules-services .options label .content {
+  flex-direction: column;
+  padding-left: 10px;
+  font-size: 16px;
+  color: var(--dark-0);
+  line-height: 24px;
+}
+#schedules-services .options label .content .description {
+  font-size: 14px;
+  color: var(--gray-2);
+}
+#schedules-services .options label .content .price {
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=main.css.map */

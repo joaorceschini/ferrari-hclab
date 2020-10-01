@@ -1,0 +1,48 @@
+#time-options {
+  h3 {
+    margin: 0;
+    margin-bottom: var(--space);
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .options {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    label {
+      width: calc(50% - 10px);
+      margin-bottom: var(--space);
+      span {
+        @include button;
+        display: flex;
+        width: 100%;
+        background-color: var(--gray-10);
+        color: var(--dark-0);
+      }
+      input {
+        display: none;
+        &:checked + span {
+            @include button-blue;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  #time-options {
+    form {
+      max-width: 900px;
+    }
+    .options {
+      justify-content: flex-start;
+      label {
+        width: calc(25% - var(--space));
+        margin-right: var(--space);
+      }
+    }
+    h3 {
+      font-size: 22px;
+    }
+}
+}

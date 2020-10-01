@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ferrari - Hcode Lab</title>
   <link rel="apple-touch-icon" sizes="57x57" href="assets/images/apple-icon-57x57.png" />
@@ -13,7 +13,7 @@
   <link rel="apple-touch-icon" sizes="144x144" href="assets/images/apple-icon-144x144.png" />
   <link rel="apple-touch-icon" sizes="152x152" href="assets/images/apple-icon-152x152.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-icon-180x180.png" />
-  <link rel="icon" type="image/png" sizes="192x192"  href="assets/images/android-icon-192x192.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-icon-192x192.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon-96x96.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
@@ -21,42 +21,46 @@
   <meta name="msapplication-TileColor" content="#E1DEDD" />
   <meta name="msapplication-TileImage" content="assets/images/ms-icon-144x144.png" />
   <meta name="theme-color" content="#E1DEDD" />
-  <meta name="description" content="Conheça a ferrari Auto Center" />
-  <link rel="stylesheet" href="assets/css/main.css" />
+  <meta name="description" content="Conheça a Ferrari Auto Center" />
+  <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
 </head>
+
 <body>
-  
+
   <header id="header">
 
     <div class="overlay"></div>
     <a href="index.html#home"><img src="assets/images/ferrari-logo.svg" class="logo" alt="Logo Ferrari" /></a>
     <button type="button" id="btn-open">
       <svg id="menu-black-18dp" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-        <path id="Caminho_215" data-name="Caminho 215" d="M0,0H32V32H0Z" fill="none"/>
-        <path id="Caminho_216" data-name="Caminho 216" d="M3,18H29V16H3Zm0-5H29V11H3ZM3,6V8H29V6Z" transform="translate(0 4)"/>
-      </svg>      
+        <path id="Caminho_215" data-name="Caminho 215" d="M0,0H32V32H0Z" fill="none" />
+        <path id="Caminho_216" data-name="Caminho 216" d="M3,18H29V16H3Zm0-5H29V11H3ZM3,6V8H29V6Z"
+          transform="translate(0 4)" />
+      </svg>
     </button>
-
     <div class="menu">
       <nav>
         <button type="button" id="btn-close">
-          <svg id="close-24px" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <path id="Caminho_244" data-name="Caminho 244" d="M0,0H24V24H0Z" fill="none"/>
-            <path id="Caminho_245" data-name="Caminho 245" d="M19,6.41,17.59,5,12,10.59,6.41,5,5,6.41,10.59,12,5,17.59,6.41,19,12,13.41,17.59,19,19,17.59,13.41,12Z"/>
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0,0H24V24H0Z" fill="none" />
+            <path
+              d="M19,6.41,17.59,5,12,10.59,6.41,5,5,6.41,10.59,12,5,17.59,6.41,19,12,13.41,17.59,19,19,17.59,13.41,12Z" />
+            </svg>
         </button>
         <ul>
           <li><a href="index.html#home">Home</a></li>
           <li><a href="index.html#service">Revisão</a></li>
           <li><a href="index.html#contact">Contato</a></li>
-          <li class="divider"><hr /></li>
+          <li class="divider">
+            <hr />
+          </li>
           <li class="hide-guest"><a href="schedules.html">Agendamentos</a></li>
           <li class="hide-guest"><a href="profile.html">Editar Dados</a></li>
           <li class="hide-guest"><a href="change-photo.html">Mudar Foto</a></li>
-          <li class="hide-guest"><a href="change-password.html">Mudar Senha</a></li>
+          <li class="hide-guest"><a href="change-password.html">Alterar Senha</a></li>
         </ul>
       </nav>
-      <footer class="footer">
+      <div class="footer">
         <hr />
         <div>
           <picture>
@@ -69,14 +73,17 @@
             </a>
           </div>
           <button type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0,0H24V24H0Z" fill="none"/><path d="M10.09,15.59,11.5,17l5-5-5-5L10.09,8.41,12.67,11H3v2h9.67ZM19,3H5A2,2,0,0,0,3,5V9H5V5H19V19H5V15H3v4a2,2,0,0,0,2,2H19a2.006,2.006,0,0,0,2-2V5A2.006,2.006,0,0,0,19,3Z" fill="#333"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M0,0H24V24H0Z" fill="none" />
+              <path
+                d="M10.09,15.59,11.5,17l5-5-5-5L10.09,8.41,12.67,11H3v2h9.67ZM19,3H5A2,2,0,0,0,3,5V9H5V5H19V19H5V15H3v4a2,2,0,0,0,2,2H19a2.006,2.006,0,0,0,2-2V5A2.006,2.006,0,0,0,19,3Z"
+                fill="#333" /></svg>
           </button>
         </div>
         <a href="auth.html" class="btn-register">Minha Conta</a>
-      </footer>
+      </div>
     </div>
     <hr class="italy" />
-
   </header>
 
   <section class="page blue" id="schedules-new">
@@ -97,10 +104,14 @@
 
           <nav>
             <button type="button" class="btn-prev">
-              <svg xmlns="http://www.w3.org/2000/svg" width="7.41" height="12" viewBox="0 0 7.41 12"><path d="M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z" transform="translate(16 18) rotate(180)" fill="#9a9a99"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="7.41" height="12" viewBox="0 0 7.41 12">
+                <path d="M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z" transform="translate(16 18) rotate(180)"
+                  fill="#9a9a99" /></svg>
             </button>
             <button type="button" class="btn-next">
-              <svg xmlns="http://www.w3.org/2000/svg" width="7.41" height="12" viewBox="0 0 7.41 12"><path d="M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z" transform="translate(-8.59 -6)" fill="#9a9a99"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="7.41" height="12" viewBox="0 0 7.41 12">
+                <path d="M10,6,8.59,7.41,13.17,12,8.59,16.59,10,18l6-6Z" transform="translate(-8.59 -6)"
+                  fill="#9a9a99" /></svg>
             </button>
           </nav>
 
@@ -120,8 +131,8 @@
           <li class="month-prev">28</li>
           <li class="month-prev">29</li>
           <li class="month-prev">30</li>
-          <li class="active">1</li>
-          <li>2</li>
+          <li>1</li>
+          <li class="active">2</li>
           <li>3</li>
           <li>4</li>
           <li>5</li>
@@ -129,7 +140,7 @@
           <li>7</li>
           <li>8</li>
           <li>9</li>
-          <li>10</li>
+          <li class="selected">10</li>
           <li>11</li>
           <li>12</li>
           <li>13</li>
@@ -156,21 +167,19 @@
 
       </div>
 
-      <form>
+      <form action="schedules-time-options.html">
 
         <footer class="fixed">
-  
+
           <a href="index.html">Voltar</a>
           <button type="submit">Continuar</button>
-    
+
         </footer>
       </form>
 
     </main>
 
-
   </section>
-  
 
 </body>
 </html>
