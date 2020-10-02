@@ -74,58 +74,48 @@
         <hr class="italy" />
     </header>
 
-    <section id="schedules-services" class="page blue">
+    <section id="schedules-summary" class="page blue">
 
         <header>
-            <h1>Escolha os Serviços</h1>
+            <h1>Resumo do Pedido<small>Confira os detalhes do pedido</small></h1>
         </header>
 
         <main>
 
-            <form action="schedules-payment.html">
+            <form action="">
 
-                <div class="options">
+                <div class="field">
+                    <input type="text" name="payment" id="payment" readonly value="Cartão de Crédito" />
+                    <label for="payment">Forma de Pagamento</label>
+                </div>
 
-                    <label>
-                        <input type="checkbox" name="service" value="1" checked />
-                        <div class="square">
-                            <div></div>
-                        </div>
-                        <div class="content">
-                            <span class="name">Revisão</span>
-                            <span class="description">Verificação mínima necessária.</span>
-                            <span class="price">R$100,00</span>
-                        </div>
-                    </label>
+                <div class="field">
+                    <input type="text" name="creditcard" id="creditcard" readonly value="***0604" />
+                    <label for="creditcard">Cartão Final</label>
+                </div>
 
-                    <label>
-                        <input type="checkbox" name="service" value="2" checked />
-                        <div class="square">
-                            <div></div>
-                        </div>
-                        <div class="content">
-                            <span class="name">Alinhamento</span>
-                            <span class="description">Alinhamento e balanceamento.</span>
-                            <span class="price">R$400,00</span>
-                        </div>
-                    </label>
+                <div class="field">
+                    <input type="text" name="installments" id="installments" readonly value="À vista" />
+                    <label for="installments">Parcelas</label>
+                </div>
 
-                    <label>
-                        <input type="checkbox" name="service" value="3" />
-                        <div class="square">
-                            <div></div>
-                        </div>
-                        <div class="content">
-                            <span class="name">Filtros</span>
-                            <span class="description">Troca do filtro de ar e combustível.</span>
-                            <span class="price">R$200,00</span>
-                        </div>
-                    </label>
+                <div class="field">
+                    <input type="text" name="services" id="services" readonly value="1" />
+                    <label for="services">Quantidade de Serviços</label>
+                </div>
 
+                <div class="field">
+                    <input type="text" name="schedule_at" id="schedule_at" readonly value="01 de outubro de 2020 às 9:00" />
+                    <label for="schedule_at">Data do Serviço</label>
+                </div>
+
+                <div class="field">
+                    <input type="text" name="total" id="total" readonly value="R$ 400,00" />
+                    <label for="total">Valor Total</label>
                 </div>
 
                 <footer class="fixed">
-                    <a href="schedules-time-options.html">Voltar</a>
+                    <a href="schedules-payment.html">Voltar</a>
                     <button type="submit">Continuar</button>
                 </footer>
 
@@ -211,7 +201,7 @@
 
             <footer>
 
-                <button type="button" id="btn-services-toggle"><svg xmlns="http://www.w3.org/2000/svg" width="64.317" height="64.317" viewBox="0 0 64.317 64.317"><path d="M0,0H64.317V64.317H0Z" fill="none"/><path d="M9.779,27.858l12.3-12.274,12.3,12.274,3.779-3.779L22.079,8,6,24.079Z" transform="translate(10.079 13.439)"/></svg></button>
+                <button type="button" id="btn-summary-toggle"><svg xmlns="http://www.w3.org/2000/svg" width="64.317" height="64.317" viewBox="0 0 64.317 64.317"><path d="M0,0H64.317V64.317H0Z" fill="none"/><path d="M9.779,27.858l12.3-12.274,12.3,12.274,3.779-3.779L22.079,8,6,24.079Z" transform="translate(10.079 13.439)"/></svg></button>
 
                 <div>
                     <span>Total</span>
@@ -226,12 +216,12 @@
 
     <script>
 
-        const btnToggle = document.querySelector('#btn-services-toggle')
-        const aside = document.querySelector('aside')
+      const btnToggle = document.querySelector('#btn-summary-toggle')
+      const aside = document.querySelector('aside')
 
-        btnToggle.addEventListener('click', e => {
-            aside.classList.toggle('open')
-        }) 
+      btnToggle.addEventListener('click', e => {
+          aside.classList.toggle('open')
+      }) 
 
     </script>
 

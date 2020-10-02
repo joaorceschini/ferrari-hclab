@@ -1,0 +1,60 @@
+#schedules-payment {
+  position: relative;
+  > header {
+      height: 260px;
+      min-height: 260px;
+      position: relative;
+      h1 {
+          display: none;
+      }
+  }
+  > main {
+      align-items: center;
+      form {
+          max-width: 100%;
+          .form-creditcard {
+              margin-top: var(--space);
+              .form-fields {
+                  flex-direction: column;
+                  width: 100%;
+                  .fields {
+                      flex-direction: row;
+                      justify-content: space-between;
+                      .field {
+                          width: calc(50% - calc(var(--space) / 2));
+                      }
+                  }
+              }
+              .form-card {
+                  position: absolute;
+                  top: 32px;
+                  width: 100%;
+                  left: 0;
+                  justify-content: center;
+                  perspective: 1000px;
+                  .faces {
+                      transform-style: preserve-3d;
+                      transition: transform .6s;
+                      width: 300px;
+                      &.flipped {
+                          transform: rotateY(180deg);
+                      }
+                      svg {
+                          width: 300px;
+                          position: absolute;
+                          backface-visibility: hidden;
+                          &.back {
+                              .name {
+                                  text-transform: uppercase;
+                              }
+                          }
+                      }
+                      .back {
+                          transform: rotateY(180deg);
+                      }
+                  }
+              }
+          }
+      }
+  }
+}
