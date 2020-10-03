@@ -22,7 +22,8 @@
     <meta name="msapplication-TileImage" content="assets/images/ms-icon-144x144.png"/>
     <meta name="theme-color" content="#E1DEDD"/>
     <meta name="description" content="Conheça a Ferrari Auto Center" />
-    <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
+    <link rel="preload" href="assets/css/main.css" as="style" />
+    <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
     
@@ -30,7 +31,7 @@
 
         <div class="overlay"></div>
         <a href="index.html#home"><img src="assets/images/ferrari-logo.svg" class="logo" alt="Logo Ferrari" /></a>
-        <button type="button" id="btn-open" ari>
+        <button type="button" id="btn-open" aria-label="Abrir Menu">
             <svg id="menu-black-18dp" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                 <path id="Caminho_215" data-name="Caminho 215" d="M0,0H32V32H0Z" fill="none"/>
                 <path id="Caminho_216" data-name="Caminho 216" d="M3,18H29V16H3Zm0-5H29V11H3ZM3,6V8H29V6Z" transform="translate(0 4)"/>
@@ -38,7 +39,7 @@
         </button>
         <div class="menu">
             <nav>
-                <button type="button" id="btn-close">
+                <button type="button" id="btn-close" aria-label="Fechar Menu">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0,0H24V24H0Z" fill="none"/><path d="M19,6.41,17.59,5,12,10.59,6.41,5,5,6.41,10.59,12,5,17.59,6.41,19,12,13.41,17.59,19,19,17.59,13.41,12Z"/></svg>
                 </button>
                 <ul>
@@ -236,7 +237,7 @@
 
     <footer id="footer">
 
-        <button type="button">
+        <button type="button" aria-label="Ir para o Topo">
             <svg xmlns="http://www.w3.org/2000/svg" width="64.317" height="64.317" viewBox="0 0 64.317 64.317"><path d="M0,0H64.317V64.317H0Z" fill="none"/><path d="M9.779,27.858l12.3-12.274,12.3,12.274,3.779-3.779L22.079,8,6,24.079Z" transform="translate(10.079 13.439)"/></svg>
         </button>
         <div class="columns">

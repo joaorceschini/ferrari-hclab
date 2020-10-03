@@ -1236,9 +1236,9 @@ header.page-title hr {
     color: var(--white);
     font-size: 30px;
     margin: 0;
-  }
-  #home > header ul li + li {
-    margin-left: calc(var(--space) * 2);
+    width: 440px;
+    padding: unset;
+    justify-content: space-around;
   }
   #home > header h1 {
     margin-top: unset;
@@ -1982,36 +1982,62 @@ header.page-title hr {
     margin-top: -17px;
   }
   #schedules-payment > main form .form-creditcard .form-card .faces.flipped {
-    transform: rotateY(180deg) translateX(76px);
+    transform: translateX(-76px) rotateY(180deg);
   }
   #schedules-payment > main form .form-creditcard .form-card .faces svg {
     width: 340px;
   }
 }
-#schedules-concluido form {
-  margin-top: var(--space);
+#schedules-complete main p {
+  margin: 0 var(--space);
+  font-size: 22px;
+  color: var(--gray-0);
+  margin-bottom: var(--space);
 }
-#schedules-concluido form h2 {
-  color: var(--green);
-  font-weight: 600;
-  font-size: 35px;
-  margin: 0;
+#schedules-complete main p small {
+  display: block;
+  font-size: 16px;
 }
-#schedules-concluido form hr {
-  border-bottom: 3px solid var(--red);
-  width: 100px;
-  margin: 10px 5px;
+#schedules-complete main footer.fixed {
+  justify-content: center;
 }
-#schedules-concluido form p {
-  margin: 0 2px;
+#schedules-complete main footer.fixed a {
+  min-width: 130px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  border-radius: var(--border-radius);
+  color: var(--black);
+  background-color: var(--green);
+  color: var(--white);
+  padding: 0 var(--space);
 }
-#schedules-concluido form p.title {
-  font-size: 25px;
-  margin: 8px 0;
+#schedules-complete main footer.fixed a:hover {
+  background-color: var(--black-10);
 }
-#schedules-concluido form p.subtitle {
-  font-size: 20px;
-  margin: 5px 2px;
+#schedules-complete main footer.fixed a:active {
+  background-color: var(--black-75);
+}
+#schedules-complete main footer.fixed a:hover {
+  background-color: var(--green-hover);
+}
+#schedules-complete main footer.fixed a:active {
+  background-color: var(--green-active);
+}
+
+@media (min-width: 1200px) {
+  #schedules-complete main footer.fixed {
+    justify-content: flex-start;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

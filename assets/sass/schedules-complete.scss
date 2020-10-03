@@ -1,32 +1,35 @@
-#schedules-concluido {
-  form {
-    margin-top: var(--space);
-
-    h2 {
-      color: var(--green);
-      font-weight: 600;
-      font-size: 35px;
-      margin: 0;
-    }
-
-    hr {
-      border-bottom: 3px solid var(--red);
-      width: 100px;
-      margin: 10px 5px;
-    }
-
-    p {
-      &.title {
-        font-size: 25px;
-        margin: 8px 0;
+#schedules-complete {
+  main {
+      p {
+          margin: 0 var(--space);
+          font-size: 22px;
+          color: var(--gray-0);
+          margin-bottom: var(--space);
+          small {
+              display: block;
+              font-size: 16px;
+          }
       }
-
-      &.subtitle {
-        font-size: 20px;
-        margin: 5px 2px;
+      footer {
+          &.fixed {
+              justify-content: center;
+              a {
+                  @include button-green;
+                  padding: 0 var(--space);
+              }
+          }
       }
+  }
+}
 
-      margin: 0 2px;
-    }
+@media (min-width: 1200px) {
+  #schedules-complete {
+      main {
+          footer {
+              &.fixed {
+                  justify-content: flex-start;
+              }
+          }
+      }
   }
 }
