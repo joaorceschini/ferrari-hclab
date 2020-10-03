@@ -1231,6 +1231,18 @@ header.page-title hr {
   #home .gallery {
     flex-direction: row;
   }
+  #home > header ul {
+    display: flex;
+    color: var(--white);
+    font-size: 30px;
+    margin: 0;
+  }
+  #home > header ul li + li {
+    margin-left: calc(var(--space) * 2);
+  }
+  #home > header h1 {
+    margin-top: unset;
+  }
 }
 @media (min-width: 1200px) {
   #home {
@@ -1940,6 +1952,66 @@ header.page-title hr {
 }
 #schedules-payment > main form .form-creditcard .form-card .faces .back {
   transform: rotateY(180deg);
+}
+
+@media (min-width: 1200px) {
+  #schedules-payment {
+    position: static;
+  }
+  #schedules-payment > header {
+    height: 160px;
+    min-height: 160px;
+  }
+  #schedules-payment > header h1 {
+    display: block;
+  }
+  #schedules-payment > main {
+    align-items: flex-start;
+  }
+  #schedules-payment > main form {
+    max-width: 900px;
+    justify-content: space-between;
+  }
+  #schedules-payment > main form .form-creditcard .form-card {
+    position: static;
+    justify-content: center;
+    padding-left: var(--space);
+  }
+  #schedules-payment > main form .form-creditcard .form-card .faces {
+    width: 100%;
+    margin-top: -17px;
+  }
+  #schedules-payment > main form .form-creditcard .form-card .faces.flipped {
+    transform: rotateY(180deg) translateX(76px);
+  }
+  #schedules-payment > main form .form-creditcard .form-card .faces svg {
+    width: 340px;
+  }
+}
+#schedules-concluido form {
+  margin-top: var(--space);
+}
+#schedules-concluido form h2 {
+  color: var(--green);
+  font-weight: 600;
+  font-size: 35px;
+  margin: 0;
+}
+#schedules-concluido form hr {
+  border-bottom: 3px solid var(--red);
+  width: 100px;
+  margin: 10px 5px;
+}
+#schedules-concluido form p {
+  margin: 0 2px;
+}
+#schedules-concluido form p.title {
+  font-size: 25px;
+  margin: 8px 0;
+}
+#schedules-concluido form p.subtitle {
+  font-size: 20px;
+  margin: 5px 2px;
 }
 
 /*# sourceMappingURL=main.css.map */

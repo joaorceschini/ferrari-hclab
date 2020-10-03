@@ -1,0 +1,32 @@
+#schedules-concluido {
+  form {
+    margin-top: var(--space);
+
+    h2 {
+      color: var(--green);
+      font-weight: 600;
+      font-size: 35px;
+      margin: 0;
+    }
+
+    hr {
+      border-bottom: 3px solid var(--red);
+      width: 100px;
+      margin: 10px 5px;
+    }
+
+    p {
+      &.title {
+        font-size: 25px;
+        margin: 8px 0;
+      }
+
+      &.subtitle {
+        font-size: 20px;
+        margin: 5px 2px;
+      }
+
+      margin: 0 2px;
+    }
+  }
+}
